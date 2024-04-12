@@ -59,7 +59,6 @@ const Users = () => {
     // getDepartments();
     
     document.title = "Manage Nalmart Accounts"
-    document.description= "Nalmart, Naturing the Authentic Legacy";
   },[])
 
   const handleDelete = ( id: string ) => {

@@ -59,7 +59,6 @@ const SignIn = () => {
 
   useEffect(() => {
     document.title = "Nalmart Vendor Login"
-    document.description= "Nalmart, Naturing the Authentic Legacy";
   },[])
   return (
     <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark mx-24 my-12">

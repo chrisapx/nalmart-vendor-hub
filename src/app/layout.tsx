@@ -35,7 +35,6 @@ export default function RootLayout({
     }
 
     document.title = "Nalmart Vendor Hub"
-    document.description= "Nalmart, Naturing the Authentic Legacy";
   }, []);
 
   const checkLogin = () => {

@@ -58,7 +58,6 @@ const Products = () => {
     // getDepartments();
     
     document.title = "Manage Nalmart Inventory"
-    document.description= "Nalmart, Naturing the Authentic Legacy";
   },[])
 
   const handleDelete = ( id: string ) => {
