@@ -6,15 +6,10 @@ import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import { Avatar } from "primereact/avatar";
 import { useState } from "react";
 import Cookies from 'js-cookie'
-
-// export const metadata: Metadata = {
-//   title: "Next.js Settings | TailAdmin - Next.js Dashboard Template",
-//   description:
-//     "This is Next.js Settings page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
-// };
+import { IUser } from "../interfaces";
 
 const Settings = () => {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState<IUser>();
 
   if (!currentUser) {
     const profileCookie = Cookies.get("profile");

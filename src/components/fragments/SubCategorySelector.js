@@ -6,7 +6,7 @@ const SubCategorySelector =({onChange, value, name, label, error, categoryId})=>
     const [data, setData] = useState([])
 
     const getCategory = () => {
-        apiService.get(`items/sub-category/${categoryId}`).then((response) => {
+        apiService.get(`/categories/${categoryId}`).then((response) => {
             if (response.status === 200){
                 setData(response.data)
             }

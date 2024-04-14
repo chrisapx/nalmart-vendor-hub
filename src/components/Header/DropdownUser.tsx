@@ -4,10 +4,11 @@ import Image from "next/image";
 import Cookies from 'js-cookie'
 import { Avatar } from "primereact/avatar";
 import { useRouter } from "next/navigation";
+import { IUser } from "@/app/interfaces";
 
 const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [ currentUser , setCurrentUser ] = useState<Object>();
+  const [ currentUser , setCurrentUser ] = useState<IUser>();
   const router = useRouter();
 
   const trigger = useRef<any>(null);
@@ -177,7 +178,7 @@ const DropdownUser = () => {
         </ul>
         <button 
             className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
-            onClick={() => { Cookies.set("token", ''); Cookies.set('profile', null); router.push('/auth/signin') }}
+            onClick={() => { Cookies.set("token", ''); Cookies.set('profile', ""); router.push('/auth/signin') }}
             >
           <svg
             className="fill-current"

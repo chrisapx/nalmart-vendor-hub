@@ -6,7 +6,7 @@ const CategorySelector =({onChange, value, name, label, error})=>{
     const [data, setData] = useState([])
 
     const getCategory = () => {
-        apiService.get(`items/categories`).then((response) => {
+        apiService.get(`/categories`).then((response) => {
             if (response.status === 200){
                 // setData(response.data)
             }

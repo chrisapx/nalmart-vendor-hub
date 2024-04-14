@@ -64,7 +64,7 @@ const Details = () => {
                             className="w-full rounded border border-stroke bg-gray py-3 pl-2 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                             type="text"
                             disabled
-                            value={contractorData?.address?.Region?.name}
+                            // value={contractorData?.address?.Region?.name}
                         />
                       </div>
                     </div>
@@ -80,7 +80,7 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData?.address?.District?.name}
+                          // value={contractorData?.address?.District?.name}
                       />
                     </div>
 
@@ -96,7 +96,7 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData?.address?.County?.name}
+                          // value={contractorData?.address?.County?.name}
                       />
                     </div>
 
@@ -116,7 +116,7 @@ const Details = () => {
                             className="w-full rounded border border-stroke bg-gray py-3 pl-2 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                             type="text"
                             disabled
-                            value={contractorData?.address?.SubCounty?.name}
+                            // value={contractorData?.address?.SubCounty?.name}
                         />
                       </div>
                     </div>
@@ -132,7 +132,7 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData?.address?.Parish?.name}
+                          // value={contractorData?.address?.Parish?.name}
                       />
                     </div>
 
@@ -148,18 +148,18 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData?.address?.village}
+                          // value={contractorData?.address?.village}
                       />
                     </div>
 
                   </div>
                   <Divider type="dashed"><span className="text-black">Referees</span></Divider>
-                    <DataTable value={contractorData?.referees} tableStyle={{ minWidth: '50rem' }}>
+                    {/* <DataTable value={contractorData?.referees} tableStyle={{ minWidth: '50rem' }}>
                       <Column field="name" header="Name"></Column>
                       <Column field="email" header="Email"></Column>
                       <Column field="phoneNumber" header="Phone Number"></Column>
                       <Column field="address" header="Address"></Column>
-                    </DataTable>
+                    </DataTable> */}
                   <Divider type="dashed"><span className="text-black">Payment Info</span></Divider>
                   <div className="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
                     <div className="w-full sm:w-1/2">
@@ -175,7 +175,7 @@ const Details = () => {
                             className="w-full rounded border border-stroke bg-gray py-3 pl-2 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                             type="text"
                             disabled
-                            value={contractorData?.paymentInfo?.tin}
+                            // value={contractorData?.paymentInfo?.tin}
                         />
                       </div>
                     </div>
@@ -191,7 +191,7 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData?.paymentInfo?.bankName}
+                          // value={contractorData?.paymentInfo?.bankName}
                       />
                     </div>
 
@@ -207,7 +207,7 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData?.paymentInfo?.bankAccountName}
+                          // value={contractorData?.paymentInfo?.bankAccountName}
                       />
                     </div>
 
@@ -226,7 +226,7 @@ const Details = () => {
                             className="w-full rounded border border-stroke bg-gray py-3 pl-2 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                             type="text"
                             disabled
-                            value={contractorData?.paymentInfo?.bankAccountNo}
+                            // value={contractorData?.paymentInfo?.bankAccountNo}
                         />
                       </div>
                     </div>
@@ -242,7 +242,7 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData?.paymentInfo?.momoNumber}
+                          // value={contractorData?.paymentInfo?.momoNumber}
                       />
                     </div>
 
@@ -258,7 +258,7 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData?.paymentInfo?.momoNames}
+                          // value={contractorData?.paymentInfo?.momoNames}
                       />
                     </div>
 
@@ -287,7 +287,7 @@ const Details = () => {
                     </div>
                     <div>
                       <span className="mb-1.5 text-black dark:text-white">
-                        {contractorData.fullName}
+                        {/* {contractorData.fullName} */}
                       </span>
                       <span className="flex gap-2.5">
                         <button className="text-sm hover:text-primary">
@@ -315,7 +315,7 @@ const Details = () => {
                             name="fullName"
                             id="fullName"
                             disabled
-                            value={contractorData.fullName}
+                            // value={contractorData.fullName}
                         />
                       </div>
                     </div>
@@ -331,7 +331,7 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData.contractorNo}
+                          // value={contractorData.contractorNo}
                       />
                     </div>
 
@@ -348,7 +348,7 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData.phoneNumber}
+                          // value={contractorData.phoneNumber}
                       />
                     </div>
                     <div className="w-full sm:w-1/2">
@@ -366,7 +366,7 @@ const Details = () => {
                             name="fullName"
                             id="fullName"
                             disabled
-                            value={contractorData.email}
+                            // value={contractorData.email}
                         />
                       </div>
                     </div>
@@ -384,7 +384,7 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData.gender}
+                          // value={contractorData.gender}
                       />
                     </div>
 
@@ -400,7 +400,7 @@ const Details = () => {
                           className="w-full rounded border border-stroke bg-gray px-4.5 py-3 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                           type="text"
                           disabled
-                          value={contractorData.nextOfKin}
+                          // value={contractorData.nextOfKin}
                       />
                     </div>
 
@@ -419,7 +419,7 @@ const Details = () => {
                             className="w-full rounded border border-stroke bg-gray py-3 pl-2 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary"
                             type="text"
                             disabled
-                            value={contractorData.nextOfKinContact}
+                            // value={contractorData.nextOfKinContact}
                         />
                       </div>
                     </div>
@@ -431,7 +431,7 @@ const Details = () => {
                         Date Created
                       </div>
                       <div>
-                        <span>{contractorData.createdAt}</span>
+                        {/* <span>{contractorData.createdAt}</span> */}
                       </div>
                     </div>
                   </div>
@@ -442,7 +442,7 @@ const Details = () => {
                     >
                       Account Status
                     </div>
-                    <div>{contractorData?.accountStatus?.name}</div>
+                    {/* <div>{contractorData?.accountStatus?.name}</div> */}
                   </div>
 
                     <div className="w-full sm:w-1/2">
@@ -452,9 +452,9 @@ const Details = () => {
                         Languages
                       </div>
                      <div>
-                       {contractorData?.languages?.map((item, index)=>(
+                       {/* {contractorData?.languages?.map((item, index)=>(
                            <span key={index}>{item.name}</span>
-                       ))}
+                       ))} */}
                      </div>
                     </div>
                   </div>
@@ -466,7 +466,7 @@ const Details = () => {
                       >
                         Potifolio
                       </div>
-                      <div>{contractorData.portfolio}</div>
+                      {/* <div>{contractorData.portfolio}</div> */}
                     </div>
 
                     <div className="w-full sm:w-1/2">
@@ -476,9 +476,9 @@ const Details = () => {
                         Skills
                       </div>
                       <div>
-                        {contractorData?.skills?.map((item, index)=>(
+                        {/* {contractorData?.skills?.map((item, index)=>(
                             <span key={index}>{item.name}</span>
-                        ))}
+                        ))} */}
                       </div>
                     </div>
                   </div>

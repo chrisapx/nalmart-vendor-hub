@@ -10,6 +10,10 @@ import apiService from '@/helpers/apiService';
 import CustomLoader from '@/components/Loader/CustomLoader';
 import { Metadata } from 'next';
 
+interface Role {
+  roleId: String,
+  name: String
+}
 
 const Users = () => {
 
@@ -55,34 +59,16 @@ const Users = () => {
 
   useEffect(() => {
     getUsers();
-    // getRoles();
-    // getDepartments();
     
     document.title = "Manage Nalmart Accounts"
   },[])
 
-  const handleDelete = ( id: string ) => {
-    console.log(users);
-  }
+const handleDelete: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+  console.log(users);
+};
 
   const handleAddUser = () => {
     setVisible(true);
-  };
-
-  const extractRole = (row) => {
-    if (row && row.roleId) {
-        const role = roleList.find(role => role.id === row.roleId);
-        return role ? role.name : '';
-    }
-    return '';
-  };
-
-  const extractDepartment = (row) => {
-    if (row && row.departmentId) {
-        const department = departmentList.find(department => department.id === row.departmentId);
-        return department ? department.name : '';
-    }
-    return '';
   };
   
   const actionsTemplate = (rowData: any) => {

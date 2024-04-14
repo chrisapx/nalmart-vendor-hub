@@ -7,11 +7,12 @@ import Link from "next/link";
 import Cookies from 'js-cookie'
 import { useState } from "react";
 import { Avatar } from "primereact/avatar";
+import { IUser } from "../interfaces";
 
 
 const Profile = () => {
 
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState<IUser>();
 
   if (!currentUser) {
     const profileCookie = Cookies.get("profile");

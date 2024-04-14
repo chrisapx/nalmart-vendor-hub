@@ -4,21 +4,20 @@ import { Avatar } from 'primereact/avatar';
 import { Button } from 'primereact/button';
 import { Column } from 'primereact/column'
 import { DataTable } from 'primereact/datatable'
-import React, { useEffect, useState } from 'react'
+import React, { MouseEventHandler, useEffect, useState } from 'react'
 import apiService from '@/helpers/apiService';
 import CustomLoader from '@/components/Loader/CustomLoader';
 import ProductForm from '@/app/products/form/ProductForm'
+import { IItem } from '@/app/interfaces';
 
 
 const Products = () => {
 
   const [ visible, setVisible ] = useState(false);
   const [ users, setUsers ] = useState([]);
-  const [ roleList, setRoleList ] = useState([]);
-  const [ departmentList, setDepartmentList ] = useState([]);
   const [ loading, setLoading ] = useState(false);
   
-  const getUsers = () => {
+  const getProducts = () => {
     setLoading(true);
     apiService.get(`items`).then((response) => {
       if (response.status === 200){
@@ -32,56 +31,18 @@ const Products = () => {
     })
   }
 
-  const getRoles = () => {
-    apiService.get(`roles`).then((response) => {
-        if (response.statusCode === 200){
-            setRoleList(response.data.data)
-        }
-    }).catch((error) => {
-        console.log(error.message)
-    })
-  }
-
-  const getDepartments = () => {
-    apiService.get(`departments`).then((response) => {
-        if (response.statusCode === 200){
-            setDepartmentList(response.data)
-        }
-    }).catch((error) => {
-        console.log(error.message)
-    })
-  }
-
   useEffect(() => {
-    getUsers();
-    // getRoles();
-    // getDepartments();
+    getProducts();
     
     document.title = "Manage Nalmart Inventory"
   },[])
 
-  const handleDelete = ( id: string ) => {
+const handleDelete: MouseEventHandler<HTMLButtonElement> = (event) => {
     console.log(users);
   }
 
   const handleAddUser = () => {
     setVisible(true);
-  };
-
-  const extractRole = (row) => {
-    if (row && row.roleId) {
-        const role = roleList.find(role => role.id === row.roleId);
-        return role ? role.name : '';
-    }
-    return '';
-  };
-
-  const extractDepartment = (row) => {
-    if (row && row.departmentId) {
-        const department = departmentList.find(department => department.id === row.departmentId);
-        return department ? department.name : '';
-    }
-    return '';
   };
   
   const actionsTemplate = (rowData: any) => {
@@ -106,7 +67,7 @@ const Products = () => {
           </div>
       );
   };
-  const imageBodyTemplate = (product) => {
+  const imageBodyTemplate = (product: IItem) => {
         return <img src={`${product.coverPhoto.url}`} alt={"No Image"} className="w-2rem h-3rem shadow-2 border-round" style={{width: 40, height: 40}} />;
     };
 

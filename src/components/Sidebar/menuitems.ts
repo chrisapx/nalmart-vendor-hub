@@ -27,7 +27,7 @@ const getMenuItems = (confirmLogout: Function) => {
             ],
         },
         {
-            section: "SUPPORT",
+            section: "MANAGEMENT",
             items: [
                 {
                     href: "/users/list",
@@ -43,6 +43,15 @@ const getMenuItems = (confirmLogout: Function) => {
                     href: "/departments/list",
                     icon: "pi pi-sitemap",
                     text: "Departments",
+                },
+                {
+                    href: "/categories",
+                    icon: "pi pi-tags",
+                    text: "Categories",
+                    submenu: [
+                        { href: "/categories/list", text: "Manage Categories" },
+                        { href: "/sub_categories/list", text: "Manage Sub Categories" },
+                    ],
                 },
             ],
         },

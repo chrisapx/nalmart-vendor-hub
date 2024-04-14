@@ -5,7 +5,7 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
 import { Card } from "primereact/card";
-import ContractorFilter from "./ContractorFilter";
+// import ContractorFilter from "./ContractorFilter";
 import { Rating } from "primereact/rating";
 import { Tag } from "primereact/tag";
 import { Dialog } from "primereact/dialog";
@@ -81,7 +81,7 @@ export default function Contractors() {
     const renderHeader = () => {
         return (
             <>
-                <ContractorFilter setFilter={setSearchForm} filter={filterContractors}/>
+                {/* <ContractorFilter setFilter={setSearchForm} filter={filterContractors}/> */}
             </>
         );
     };
