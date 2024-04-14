@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import ChartOne from "../Charts/ChartOne";
 import ChartThree from "../Charts/ChartThree";
 import ChartTwo from "../Charts/ChartTwo";
@@ -8,6 +8,10 @@ import TableOne from "../Tables/TableOne";
 import CardDataStats from "../CardDataStats";
 
 const ECommerce: React.FC = () => {
+
+  useEffect(() => {
+    window.location.reload();
+  },[])
   return (
     <>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
