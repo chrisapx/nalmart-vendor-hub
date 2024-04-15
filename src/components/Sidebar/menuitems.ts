@@ -1,8 +1,7 @@
 import { MenuSection } from "@/app/interfaces";
+import Cookies from "js-cookie";
 
-const user = 'user'
 const getMenuItems = (confirmLogout: Function) => {
-
     const menuItems: MenuSection[] = [
         {
             section: "MENU",
@@ -55,7 +54,8 @@ const getMenuItems = (confirmLogout: Function) => {
                     text: "Settings",
                 },
                 {
-                    action: () => confirmLogout("center"),
+                    action: () => { Cookies.remove("token"); Cookies.remove('profile'); },
+                    href: '/auth/signin',
                     icon: "pi pi-power-off",
                     text: "SignOut",
                 },
