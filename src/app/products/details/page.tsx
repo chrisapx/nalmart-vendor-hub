@@ -15,8 +15,9 @@ const Details = () => {
   const dispatch = useDispatch();
   const [contractorData, setContractorData] = useState({});
   const { showSuccess, showError } = useToast();
-  const getContractorDetails=()=>{
-    apiService.get(`contractors/${1}`).then((response) => {
+  
+  const getItemDetails=()=>{
+    apiService.get(`items/${1}`).then((response) => {
       console.log(response)
       if (response.statusCode === 200){
         setContractorData(response.data)
@@ -30,7 +31,7 @@ const Details = () => {
     })
   }
   useEffect(()=>{
-    getContractorDetails()
+    getItemDetails()
   },[])
   return (
     <DefaultLayout>

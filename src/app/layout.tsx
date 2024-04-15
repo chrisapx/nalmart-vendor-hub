@@ -14,6 +14,7 @@ import {LoaderProvider} from "../components/Loader/LoaderProvider";
 import Cookies from 'js-cookie'
 import {useRouter} from "next/navigation";
 import apiService from "@/helpers/apiService";
+import ProtectedRoute from "./ProtectedRoute";
 
 export default function RootLayout({
   children,
@@ -69,13 +70,14 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <div className="dark:bg-boxdark-2 dark:text-bodydark">
-          <StateProvider>
-            <ToastProvider>
+          <ProtectedRoute>
+            <StateProvider>
+              <ToastProvider>
                 <LoaderProvider/>
-                {loading ? <Loader /> : ( isLoggedIn ? children : null )}
-                {/* {children} */}
-            </ToastProvider>
-          </StateProvider>
+                {loading ? <Loader /> : children }
+              </ToastProvider>
+            </StateProvider>
+          </ProtectedRoute>
         </div>
       </body>
     </html>

@@ -9,6 +9,7 @@ import apiService from '@/helpers/apiService';
 import CustomLoader from '@/components/Loader/CustomLoader';
 import ProductForm from '@/app/products/form/ProductForm'
 import { IItem } from '@/app/interfaces';
+import ProtectedRoute from '@/app/ProtectedRoute';
 
 
 const Products = () => {
@@ -73,6 +74,7 @@ const handleDelete: MouseEventHandler<HTMLButtonElement> = (event) => {
 
   return (
     <>
+    <ProtectedRoute>
     <DefaultLayout>
       <div className="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
         <div className='flex justify-between mb-7'>
@@ -91,7 +93,7 @@ const handleDelete: MouseEventHandler<HTMLButtonElement> = (event) => {
         <ProductForm show ={visible} toggle={ setVisible } />
 
         <div className="flex flex-col">
-            <DataTable value={users} dataKey="id" resizableColumns emptyMessage="No users found." stripedRows  paginator
+            <DataTable value={users} dataKey="id" resizableColumns emptyMessage="No products found" stripedRows  paginator
               rows={10} rowsPerPageOptions={[5, 10, 25, 50, 100, 200]} tableStyle={{ minWidth: '80rem', maxWidth: '100px' }}
             >
               <Column field="sku" header="Item Sku" sortable filter />
@@ -99,13 +101,22 @@ const handleDelete: MouseEventHandler<HTMLButtonElement> = (event) => {
               <Column field="globalPrice" header="Global price" dataType='numeric' sortable filter />
               <Column field="price" header="Price" dataType='numeric'sortable filter />
               <Column field="discount" header="Discount" body={(e) => {return ( <div>{ e.discount.toFixed(1) +'%' }</div> )}} dataType='numeric' sortable filter />
-              <Column field="phone" header="Phone Number"  filter />
+              <Column field="freeDelivery" header="Delivery"  filter />
+              <Column field="approved" header="Approved status"  filter />
+              <Column field="stockCount" header="Amount in stock"  filter />
+              <Column field="brand" header="Brand"  filter />
+              <Column field="serialNumber" header="Serial Number"  filter />
+              <Column field="store" header="Supply Store"  filter />
+              <Column field="category" header="Category"  filter />
+              <Column field="subCategory" header="SubCategory"  filter />
+              <Column field="type" header="Item state"  filter />
               <Column header="Actions" body={actionsTemplate} />
             </DataTable>
         </div>
       </div>
       <CustomLoader loading={loading}/>
     </DefaultLayout>
+    </ProtectedRoute>
     </>
   )
 }
