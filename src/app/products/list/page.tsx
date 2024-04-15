@@ -68,7 +68,7 @@ const handleDelete: MouseEventHandler<HTMLButtonElement> = (event) => {
       );
   };
   const imageBodyTemplate = (product: IItem) => {
-        return <img src={`${product.coverPhoto.url}`} alt={"No Image"} className="w-2rem h-3rem shadow-2 border-round" style={{width: 40, height: 40}} />;
+        return <img src={`${product?.coverPhoto?.url}`} alt={"No Image"} className="w-2rem h-3rem shadow-2 border-round" style={{width: 40, height: 40}} />;
     };
 
   return (

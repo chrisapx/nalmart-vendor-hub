@@ -53,7 +53,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ show, toggle }) => {
         approved: false,
         brand: "",
         category: "",
-        coverPhoto: null,
+        coverPhoto: { url: ""},
         description: "",
         details: [],
         discount: "",
@@ -135,7 +135,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ show, toggle }) => {
                                 </div>
                                 <div>
                                     <SubCategorySelector label="Sub Category"
-                                                    name="category"
+                                                    name="subCategory"
                                                     categoryId={formProps.values.category}
                                                     onChange={formProps.handleChange}
                                                     // onBlur={formProps.handleBlur}
@@ -209,15 +209,16 @@ const ProductForm: React.FC<ProductFormProps> = ({ show, toggle }) => {
                                                     value={formProps.values.price}
                                                     error={formProps.touched.price && formProps.errors.price}/>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <TextFormField  label="Discount"
                                                 name="discount"
                                                 placeHolder="Enter discount"
                                                 onChange={formProps.handleChange}
                                                 onBlur={formProps.handleBlur}
+                                                disabled
                                                 value={formProps.values.discount}
                                                 error={formProps.touched.discount && formProps.errors.discount}/>
-                                </div>
+                                </div> */}
                                 <div>
                                 
                                     <TextFormField  label="Discount"

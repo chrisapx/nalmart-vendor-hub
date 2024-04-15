@@ -9,7 +9,6 @@ const getMenuItems = (confirmLogout: Function) => {
             items: [
                 { href: "/dashboard", icon: "pi pi-home", text: "Dashboard" },
                 {
-                    href: "/orders",
                     icon: "pi pi-list",
                     text: "Orders",
                     submenu: [
@@ -17,7 +16,6 @@ const getMenuItems = (confirmLogout: Function) => {
                     ],
                 },
                 {
-                    href: "/products",
                     icon: "pi pi-tags",
                     text: "Products",
                     submenu: [
@@ -30,27 +28,20 @@ const getMenuItems = (confirmLogout: Function) => {
             section: "MANAGEMENT",
             items: [
                 {
-                    href: "/users/list",
-                    icon: "pi pi-user",
-                    text: "Users",
+                    icon: "pi pi-users",
+                    text: "User management",
+                    submenu: [
+                        { href: "/users/list", text: "Manage Users" },
+                        { href: "/roles/list", text: "Manage User roles" },
+                        { href: "/departments/list", text: "Manage Departments" },
+                    ],
                 },
                 {
-                    href: "/roles/list",
-                    icon: "pi pi-briefcase",
-                    text: "Roles",
-                },
-                {
-                    href: "/departments/list",
-                    icon: "pi pi-sitemap",
-                    text: "Departments",
-                },
-                {
-                    href: "/categories",
                     icon: "pi pi-tags",
                     text: "Categories",
                     submenu: [
                         { href: "/categories/list", text: "Manage Categories" },
-                        { href: "/sub_categories/list", text: "Manage Sub Categories" },
+                        { href: "/sub-categories/list", text: "Manage Sub Categories" },
                     ],
                 },
             ],

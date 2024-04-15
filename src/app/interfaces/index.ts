@@ -37,12 +37,16 @@ interface MenuItem {
     roles: Array<any>;
   }
 
+  interface Image {
+    url: string;
+  }
+
   interface IItem {
-    ads: Array<any>;
+    ads: Array<Image>;
     approved: boolean;
     brand: string;
     category: string;
-    coverPhoto: any;
+    coverPhoto: Image;
     description: string;
     details: Array<any>;
     discount: any;
@@ -51,7 +55,7 @@ interface MenuItem {
     name: string;
     displayName: string;
     original: string;
-    photos: Array<any>;
+    photos: Array<Image>;
     price: any;
     qty: string;
     serialNumber: string;

@@ -4,10 +4,10 @@ import { Avatar } from 'primereact/avatar';
 import { Button } from 'primereact/button';
 import { Column } from 'primereact/column'
 import { DataTable } from 'primereact/datatable'
-import DepartmentForm from '../form/DepartmentForm'
 import React, { useEffect, useState } from 'react'
 import apiService from '@/helpers/apiService';
 import CustomLoader from '@/components/Loader/CustomLoader';
+import CategoriesForm from '../form/Category';
 
 const Departments = () => {
 
@@ -17,8 +17,8 @@ const Departments = () => {
   
   const getDepartments = () => {
     setLoading(true);
-    apiService.get(`departments`).then((response) => {
-        if (response.statusCode === 200){
+    apiService.get(`categories`).then((response) => {
+        if (response.status === 200){
             setDepartments(response.data)
         }
       setLoading(false);
@@ -57,8 +57,8 @@ const Departments = () => {
         <div className='flex justify-between mb-7'>
         
             <section className="">
-              <div className='mb-6 text-xl font-semibold text-black dark:text-white'>Departments</div>
-              <h6 className='text-black dark:text-white'>Available departments</h6>
+              <div className='mb-6 text-xl font-semibold text-black dark:text-white'>Categories</div>
+              <h6 className='text-black dark:text-white'>Available Categories</h6>
             </section>
             <div className='h-10 gap-3  flex'>
               <Button label="Add New" outlined severity="info" size='small' icon="pi pi-plus" onClick={handleAddDepartment} title='Add a new department' />
@@ -67,13 +67,13 @@ const Departments = () => {
             </div>
         </div>
 
-        <DepartmentForm show ={visible} toggle={ setVisible } />
+        <CategoriesForm show ={visible} toggle={ setVisible } />
 
         <div className="flex flex-col">
-            <DataTable value={departments} dataKey="id" size='normal' emptyMessage="No users found." resizableColumns paginator
+            <DataTable value={departments} dataKey="id" size='normal' emptyMessage="No categories found." resizableColumns paginator
               rows={5} rowsPerPageOptions={[5, 10, 25, 50]}
             >
-              <Column field="name" header="Department" sortable filter />
+              <Column field="name" header="Category" sortable filter />
               <Column header="Actions" body={actionsTemplate} />
             </DataTable>
         </div>

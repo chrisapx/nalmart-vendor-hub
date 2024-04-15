@@ -18,7 +18,7 @@ axios.interceptors.request.use((config) => {
 const handleRequest = async (requestPromise) => {
     try {
         const response = await requestPromise;
-        console.log(response);
+        // console.log(response);
         return response;
     } catch (error) {
         if (axios.isAxiosError(error)) {

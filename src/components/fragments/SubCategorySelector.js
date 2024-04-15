@@ -5,8 +5,9 @@ import apiService from "../../helpers/apiService";
 const SubCategorySelector =({onChange, value, name, label, error, categoryId})=>{
     const [data, setData] = useState([])
 
-    const getCategory = () => {
-        apiService.get(`/categories/${categoryId}`).then((response) => {
+    const getSubCategories = () => {
+        console.log(categoryId);
+        apiService.get(`categories/${categoryId}`).then((response) => {
             if (response.status === 200){
                 setData(response.data)
             }
@@ -15,8 +16,8 @@ const SubCategorySelector =({onChange, value, name, label, error, categoryId})=>
         })
     }
     useEffect(()=>{
-        getCategory()
-    },[])
+        getSubCategories()
+    },[categoryId])
     return (
         <>
             <div>{label}</div>
@@ -26,7 +27,7 @@ const SubCategorySelector =({onChange, value, name, label, error, categoryId})=>
                           name={name}
                           onChange={onChange}
                           optionLabel="name"
-                          optionValue="subCategoryId"
+                          optionValue="id"
                           placeholder="Select Subcategory"
                           className="w-full"/>
             </div>
