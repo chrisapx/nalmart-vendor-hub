@@ -231,7 +231,12 @@ const ProductForm: React.FC<ProductFormProps> = ({ show, toggle }) => {
                         
                                 {/* Main image picker */}
                                 <div className="image-picker">
-                                    <input type="file" accept="image/*" id="fileInput" onChange={e => setCoverPhoto(e.target.files[0])} style={{ display: 'none' }} />
+                                    <input type="file" accept="image/*" id="fileInput" 
+                                        onChange={e => {
+                                            if ( e.target.files && e.target.files.length > 0) { 
+                                                setCoverPhoto(e.target.files[0]); 
+                                        }}} 
+                                        style={{ display: 'none' }} />
                                     <label htmlFor="fileInput" className="picker-box">
                                         {!coverPhoto ? (<div className="plus">+</div>) : (<div className="plus" style={{fontSize: 12}}>Captured</div>)}
                                         <div className="text">Main Image</div>
@@ -241,7 +246,9 @@ const ProductForm: React.FC<ProductFormProps> = ({ show, toggle }) => {
                                 {/* Other images picker */}
                                 { elements.map((picker, index) => (
                                     <div key={index} className="image-picker">
-                                        <input type="file" accept="image/*" id={`photofileInput-${picker.id}`} onChange={e => setPhotos(prev => [...prev, e.target.files[0]])} style={{ display: 'none' }} />
+                                        <input type="file" accept="image/*" id={`photofileInput-${picker.id}`} 
+                                            onChange={(e: any) => setPhotos(prev => e.target.files[0] != null ? [...prev, e.target.files[0]] : prev)}
+                                            style={{ display: 'none' }} />
                                         <label htmlFor={`photofileInput-${picker.id}`} className="picker-box">
                                             {!photoImages[picker.id] ? (<div className="plus">+</div>) : (<div className="plus" style={{fontSize: 12}}>Captured</div>)}
                                             <div className="text">{picker.name}</div>
@@ -252,7 +259,9 @@ const ProductForm: React.FC<ProductFormProps> = ({ show, toggle }) => {
                                 {/* Other images picker */}
                                 { usageImages.map((picker, index) => (
                                     <div key={index} className="image-picker">
-                                        <input type="file" accept="image/*" id={`adfileInput-${picker.id}`} onChange={e => setAds( prev => [...prev, e.target.files[0]])} style={{ display: 'none' }} />
+                                        <input type="file" accept="image/*" id={`adfileInput-${picker.id}`} 
+                                        onChange={(e: any) => setAds(prev => e.target.files[0] != null ? [...prev, e.target.files[0]] : prev)}
+                                        style={{ display: 'none' }} />
                                         <label htmlFor={`adfileInput-${picker.id}`} className="picker-box">
                                             {!ads[picker.id] ? (<div className="plus">+</div>) : (<div className="plus" style={{fontSize: 12}}>Captured</div>)}
                                             <div className="text">{picker.name}</div>
