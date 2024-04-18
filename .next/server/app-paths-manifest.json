@@ -1,9 +1,24 @@
 {
-  "/not-found": "app/not-found.js",
-  "/users/list/page": "app/users/list/page.js",
+  "/_not-found": "app/_not-found.js",
   "/auth/signin/page": "app/auth/signin/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
+  "/categories/list/page": "app/categories/list/page.js",
+  "/departments/list/page": "app/departments/list/page.js",
   "/products/list/page": "app/products/list/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/roles/list/page": "app/roles/list/page.js",
+  "/products/details/page": "app/products/details/page.js",
+  "/sub-categories/list/page": "app/sub-categories/list/page.js",
   "/profile/page": "app/profile/page.js",
-  "/sub-categories/list/page": "app/sub-categories/list/page.js"
+  "/settings/page": "app/settings/page.js",
+  "/users/list/page": "app/users/list/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/chart/page": "app/chart/page.js",
+  "/calendar/page": "app/calendar/page.js",
+  "/auth/signup/page": "app/auth/signup/page.js",
+  "/page": "app/page.js",
+  "/forms/form-elements/page": "app/forms/form-elements/page.js",
+  "/tables/page": "app/tables/page.js",
+  "/ui/alerts/page": "app/ui/alerts/page.js",
+  "/forms/form-layout/page": "app/forms/form-layout/page.js",
+  "/ui/buttons/page": "app/ui/buttons/page.js"
 }
