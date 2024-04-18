@@ -4,6 +4,7 @@ import { Avatar } from 'primereact/avatar';
 import { Button } from 'primereact/button';
 import { Column } from 'primereact/column'
 import { DataTable } from 'primereact/datatable'
+import UserRoleForm from '../form/AssignUserRoles'
 import DepartmentForm from '../form/RoleForm'
 import React, { useEffect, useState } from 'react'
 import apiService from '@/helpers/apiService';
@@ -12,6 +13,7 @@ import CustomLoader from '@/components/Loader/CustomLoader';
 const Roles = () => {
 
   const [ visible, setVisible ] = useState(false);
+  const [ rolAssignForm, setRoleAssinForm ] = useState(false);
   const [ roles, setRoles ] = useState([]);
   const [ loading, setLoading ] = useState(false);
 
@@ -40,6 +42,10 @@ const Roles = () => {
   const handleAddDepartment = () => {
     setVisible(true);
   };
+
+  const handleAssignUserRole = () => {
+    setRoleAssinForm(true);
+  }
   
   const actionsTemplate = (rowData: any) => {
       return(
@@ -62,6 +68,7 @@ const Roles = () => {
               <h6 className='text-black dark:text-white'>Available roles</h6>
             </section>
             <div className='h-10 gap-3  flex'>
+              <Button label="Assign User Role" outlined severity="info" size='small' icon="pi pi-plus" onClick={handleAssignUserRole} title='Add a new role' />
               <Button label="Add New" outlined severity="info" size='small' icon="pi pi-plus" onClick={handleAddDepartment} title='Add a new role' />
               <Button label="Excel" outlined severity="success" size="small" icon="pi pi-file-excel" title='Download excel list of all roles'/>
               <Button label="Pdf" outlined severity="danger" size="small" icon="pi pi-file-pdf" title='Download pdf list of all roles'/>
@@ -69,6 +76,7 @@ const Roles = () => {
         </div>
 
         <DepartmentForm show ={visible} toggle={ setVisible } />
+        <UserRoleForm show ={rolAssignForm} toggle={ setRoleAssinForm } />
 
         <div className="flex flex-col">
             <DataTable value={roles} dataKey="id" size='normal' emptyMessage="No roles found." resizableColumns paginator

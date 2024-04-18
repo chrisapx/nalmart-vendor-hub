@@ -45,7 +45,7 @@ const UserForm: React.FC<UserFormProps> = ({ show, toggle }) => {
     const handleSubmit = ( values: IUser ) => {
         setLoading(true);
 
-        apiService.post(`users/u1`, values, {
+        apiService.post(`users/admin`, values, {
             headers: {
                 'Content-Type': 'application/json'
             }

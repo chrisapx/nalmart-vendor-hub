@@ -93,7 +93,7 @@ const handleDelete: MouseEventHandler<HTMLButtonElement> = (event) => {
         <ProductForm show ={visible} toggle={ setVisible } />
 
         <div className="flex flex-col">
-            <DataTable value={users} dataKey="id" resizableColumns emptyMessage="No products found" stripedRows  paginator
+            <DataTable value={users} dataKey="itemID" resizableColumns emptyMessage="No products found" stripedRows  paginator
               rows={10} rowsPerPageOptions={[5, 10, 25, 50, 100, 200]} tableStyle={{ minWidth: '80rem', maxWidth: '100px' }}
             >
               <Column field="sku" header="Item Sku" sortable filter />

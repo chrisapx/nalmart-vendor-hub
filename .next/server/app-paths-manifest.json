@@ -1,5 +1,9 @@
 {
+  "/not-found": "app/not-found.js",
+  "/users/list/page": "app/users/list/page.js",
   "/auth/signin/page": "app/auth/signin/page.js",
-  "/auth/signup/page": "app/auth/signup/page.js",
-  "/products/list/page": "app/products/list/page.js"
+  "/dashboard/page": "app/dashboard/page.js",
+  "/products/list/page": "app/products/list/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/sub-categories/list/page": "app/sub-categories/list/page.js"
 }

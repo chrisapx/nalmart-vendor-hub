@@ -83,7 +83,8 @@ const ProductForm: React.FC<ProductFormProps> = ({ show, toggle }) => {
                 'Content-Type': 'application/json'
             }
         }).then((response) => {
-            if (response.statusCode !== 200){
+            if (response.status !== 200){
+                setLoading(false);
                 return showError(response.message)
             }
             showSuccess(response.message)
