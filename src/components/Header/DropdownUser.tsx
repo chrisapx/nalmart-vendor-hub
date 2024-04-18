@@ -16,11 +16,22 @@ const DropdownUser = () => {
   const dropdown = useRef<any>(null);
 
   useEffect(() => {
-    const user = Cookies.get("profile");
-    if(user){
-      setCurrentUser(JSON.parse(user));
+    function getAuthenticatedUser(): void {
+      try {
+        const user = Cookies.get("profile")
+        console.log(`user`, user);
+        if (user) {
+          setCurrentUser(JSON.parse(user));
+        } else {
+          console.log("No authenticated user");
+        }
+      } catch (error) {
+        console.error("Failed to retrieve or parse user data:", error);
+      }
     }
-  },[Cookies.get("profile")])
+    getAuthenticatedUser()
+  }, [setCurrentUser])
+
 
   // close on click outside
   useEffect(() => {
