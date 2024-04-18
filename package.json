@@ -12,6 +12,8 @@
     "@reduxjs/toolkit": "^2.2.1",
     "apexcharts": "^3.45.2",
     "axios": "^1.6.8",
+    "compressorjs": "^1.2.1",
+    "firebase": "^10.11.0",
     "flatpickr": "^4.6.13",
     "formik": "^2.4.5",
     "js-cookie": "^3.0.5",
@@ -26,6 +28,7 @@
     "react-dom": "^18",
     "react-loader-spinner": "^6.1.6",
     "react-redux": "^9.1.0",
+    "uuid": "^9.0.1",
     "yup": "^1.4.0"
   },
   "devDependencies": {
@@ -33,6 +36,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^9.0.8",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",

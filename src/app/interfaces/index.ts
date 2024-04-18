@@ -42,20 +42,18 @@ interface MenuItem {
   }
 
   interface IItem {
-    ads: Array<Image>;
+    ads: Array<any>;
     approved: boolean;
     brand: string;
     category: string;
-    coverPhoto: Image;
+    coverPhoto: any;
     description: string;
     details: Array<any>;
-    discount: any;
     freeDelivery: boolean;
     globalPrice: any;
     name: string;
     displayName: string;
-    original: string;
-    photos: Array<Image>;
+    photos: Array<any>;
     price: any;
     qty: string;
     serialNumber: string;
